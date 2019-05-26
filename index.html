@@ -202,15 +202,18 @@
 					</section>
 					<section data-transition="slide">
 						<a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">Typescript Handbook</a>
+						<aside class="notes">
+							A link to find more information and examples on types.
+						</aside>
 					</section>
-					<aside class="notes">
-						A link to find more information and examples on types.
-					</aside>
 				</section>
 				<section>
 					<section>
 						<h2 style="color:#7F171F">Classes</h2>
 						<img src="./assets/oop.png" alt="duck-typing" width="580px" height="400px">
+						<aside class="notes">
+							Before the introduction of ES6 classes catered for all the developers' needs in terms of object-oriented class-based approach.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Examples</h3>
@@ -228,7 +231,6 @@
 								let greeter = new Greeter("world");
 						</code></pre>
 						<aside class="notes">
-							Before the introduction of ES6 classes catered for all the developers' needs in terms of object-oriented class-based approach.
 							Syntax is similar to that that exists in ES6.
 						</aside>
 					</section>
@@ -278,7 +280,7 @@
 								new Animal("Cat").name; // Error: 'name' is private;
 						</code></pre>
 						<aside class="notes">
-							Private: a member can be accessed only within the containing class.
+							Private modifier: a member can be accessed only within the containing class.
 						</aside>
 					</section>
 					<section>
@@ -301,7 +303,7 @@
 								console.log(howard.name); // error
 						</code></pre>
 						<aside class="notes">
-							Protected modifier: not only within the containing class, but also fron the deriving classes.
+							Protected modifier: not only within the containing class, but also from the deriving classes.
 						</aside>
 					</section>
 					<section>
@@ -351,11 +353,11 @@
 					<section>
 						<h2 style="color:#7F171F">Interfaces</h2>
 						<img src="./assets/duck-typing.jpg" alt="duck-typing" width="728px" height="546px">
+						<aside class="notes">
+							Type checking focuses on the shape that values have ("duck typing", "structural subtyping").
+							Interfaces fill the role of naming such types and help define contracts.
+						</aside>
 					</section>
-					<aside class="notes">
-						Type checking focuses on the shape that values have ("duck typing", "structural subtyping").
-						Interfaces fill the role of naming such types and help define contracts.
-					</aside>
 					<section>
 						<h3 style="color:#005090">Examples</h3>
 						<pre><code data-trim data-noescape>

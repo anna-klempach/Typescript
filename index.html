@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Typescript</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -76,10 +76,7 @@
 							<li>Async/await</li>
 						</ul>
 						<aside class="notes">
-							Inform the listeners on what you are going to speak about:
-							a few words about what Typescript is,
-							discuss the basic features,
-							show some examples.
+							Main Typescript features that add to the existing JS features.
 						</aside>
 					</section>
 					<section data-transition="slide">
@@ -90,6 +87,9 @@
 								<li>Abbreviated "arrow" syntax for anonymous functions</li>
 								<li>Optional and default parameters</li>
 							</ul>
+							<aside class="notes">
+								Main Typescript features that extend the existing JS features.
+							</aside>
 					</section>
 				</section>
 				<section>
@@ -111,6 +111,11 @@
 								let color<mark>: string</mark> = "blue";
 								color = 'red';
 						</code></pre>
+						<aside class="notes">
+							Static type annotations are ways to define intended contract of the function or the variable.
+							Optional.
+							Syntax (variable: type).
+						</aside>
 					</section>
 					<section>
 						<h3>Array</h3>
@@ -129,7 +134,10 @@
 							create("string"); // Error
 							create(false); // Error
 							create(undefined); // Error
-						</code></pre>	
+						</code></pre>
+						<aside class="notes">
+							Types that are the same as in JS.
+						</aside>	
 					</section>
 					<section>
 						<h2 style="color:#005090">Type system</h2>
@@ -141,7 +149,11 @@
 								// Initialize it
 								x = ["hello", 10]; // OK
 								// Initialize it incorrectly
-								x = [10, "hello"]; // Error</code></pre>
+								x = [10, "hello"]; // Error
+						</code></pre>
+						<aside class="notes">
+							Types adopted from more large scale languages.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Type system</h3>
@@ -159,6 +171,9 @@
 								console.log("This is my warning message");
 							}
 						</code></pre>
+						<aside class="notes">
+							Type examples (just switch the slide with a short pause).
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Type system</h3>
@@ -181,10 +196,16 @@
 								throw new Error(message);
 							}
 						</code></pre>
+						<aside class="notes">
+							Explain why we are not going deep into detail.
+						</aside>
 					</section>
 					<section data-transition="slide">
 						<a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">Typescript Handbook</a>
 					</section>
+					<aside class="notes">
+						A link to find more information and examples on types.
+					</aside>
 				</section>
 				<section>
 					<section>
@@ -206,6 +227,10 @@
 								
 								let greeter = new Greeter("world");
 						</code></pre>
+						<aside class="notes">
+							Before the introduction of ES6 classes catered for all the developers' needs in terms of object-oriented class-based approach.
+							Syntax is similar to that that exists in ES6.
+						</aside>
 					</section>
 					<section>
 						<h4 style="color:#005090">Inheritance</h4>
@@ -222,6 +247,9 @@
 									}
 								}
 						</code></pre>
+						<aside class="notes">
+							Inheritance with key word "extends".
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Public</h3>
@@ -234,6 +262,9 @@
 									}
 								}
 						</code></pre>
+						<aside class="notes">
+							Public modifier (a member can be accessed throughout the code).
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Private</h3>
@@ -246,6 +277,9 @@
 								
 								new Animal("Cat").name; // Error: 'name' is private;
 						</code></pre>
+						<aside class="notes">
+							Private: a member can be accessed only within the containing class.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Protected</h3>
@@ -266,6 +300,9 @@
 								let howard = new Employee("Howard", "Sales");
 								console.log(howard.name); // error
 						</code></pre>
+						<aside class="notes">
+							Protected modifier: not only within the containing class, but also fron the deriving classes.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Readonly</h3>
@@ -280,6 +317,9 @@
 								let dad = new Octopus("Man with the 8 strong legs");
 								dad.name = "Man with the 3-piece suit"; // error! name is readonly.
 						</code></pre>
+						<aside class="notes">
+							Readonly modifier: must be initialized at the declaration or within a constructor.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Abstract Classes</h3>
@@ -299,6 +339,12 @@
 								  }
 								}
 						</code></pre>
+						<aside class="notes">
+							Abstract classes: the highest level of abstraction.
+							Base classes.
+							Cannot have instances.
+							Methods defined as abstract within an abstract class can not be implemented and must be implemented within the derived classes.
+						</aside>
 					</section>
 				</section>
 				<section>
@@ -306,6 +352,10 @@
 						<h2 style="color:#7F171F">Interfaces</h2>
 						<img src="./assets/duck-typing.jpg" alt="duck-typing" width="728px" height="546px">
 					</section>
+					<aside class="notes">
+						Type checking focuses on the shape that values have ("duck typing", "structural subtyping").
+						Interfaces fill the role of naming such types and help define contracts.
+					</aside>
 					<section>
 						<h3 style="color:#005090">Examples</h3>
 						<pre><code data-trim data-noescape>
@@ -318,6 +368,10 @@
 								let myObj = {size: 10, label: "Size 10 Object"};
 								printLabel(myObj);
 						</code></pre>
+						<aside class="notes">
+							Pay attention to the interface and its property.
+							Function can take any object that implements the interface.
+						</aside>
 					</section>
 					<section>
 							<h3 style="color:#005090">Classes Extending Interfaces</h3>
@@ -334,6 +388,9 @@
 										constructor(h: number, m: number) { }
 									}
 							</code></pre>
+							<aside class="notes">
+								Explicitly enforcing that a class meets a particular contract.
+							</aside>
 						</section>
 					<section>
 						<h4 style="color:#005090">Optional Properties</h4>
@@ -354,6 +411,10 @@
 									return newSquare;
 								}								
 						</code></pre>
+						<aside class="notes">
+							Properties might be optional.
+							Do not show this slide, but leave it available in the presentation.
+						</aside>
 					</section>
 					<section>
 						<h3 style="color:#005090">Readonly Properties</h3>
@@ -366,13 +427,41 @@
 								let p1: Point = { x: 10, y: 20 };
 								p1.x = 5; // error!
 						</code></pre>
+						<aside class="notes">
+							Properties can be readonly.
+							Do not show this slide, but leave it available in the presentation.
+						</aside>
 					</section>
 				</section>
 				<section>
-					<section data-background-image="./assets/checker-improper-age-light.png" data-background-size="contain"></section>
-					<section data-background-video="./assets/checker-well-done.mp4"></section>
-					<section data-background-video="./assets/transpolation.mp4"></section>
-					<section data-background-image="./assets/transpolation-light.png" data-background-size="contain"></section>
+					<section data-background-image="./assets/checker-improper-age-light.png" data-background-size="contain">
+						<aside class="notes">
+							The main benefits of using TS in developing process.
+							First: provides developers with mighty tools for code checking and refactoring.
+							Explain what there is in the slide and why the code will not work.
+							Explain what we can do to refactor it initially: change file into .ts, assign types to the function arguments.
+						</aside>
+					</section>
+					<section data-background-video="./assets/checker-well-done.mp4">
+						<aside class="notes">
+							Explain what is going on:
+							the compiler does not know about types, change file into .ts, assign type to the function argument, show, that compiler knows the type and shows hints, introduce interface, assign interface to the cb function argument.
+						</aside>
+					</section>
+					<section data-background-video="./assets/transpolation.mp4">
+						<aside class="notes">
+							Secondly: transpolation (target - ES3 or newer, in this case - ES5).
+							The code will transpile even though it is incorrect.
+							Pay attention to the changes in the code: types and interface disappear.
+						</aside>
+					</section>
+					<section data-background-image="./assets/transpolation-light.png" data-background-size="contain">
+						<aside class="notes">
+							Another example of transpolation. Changes: the class and the arrow function turn into function declaration,
+							interface and types disapper.
+							Conclusion: first of all, TS provides developers with mighty tools for static checking and code refactoring, secondly, it gives opportunity to use newest and evolving features in older targets.
+						</aside>
+					</section>
 				</section>
 				<section>
 					<h2>Useful Links</h2>
@@ -380,10 +469,18 @@
 						<li><a href="https://www.typescriptlang.org/index.html" target="_blank">Typescript Official Website</a></li>
 						<li><a href="https://slack.engineering/typescript-at-slack-a81307fa288d" target="_blank">"TypeScript at Slack", article by Felix Rieseberg</a></li>
 						<li><a href="https://github.com/microsoft/TypeScript" target="_blank">Typescript GitHub</a></li>
-					</ul>	
+					</ul>
+					<aside class="notes">
+						If you are interested, you can check the following links:
+						TS official website, an article about a developer's experience in introducing TS in everyday work, the GitHub community. 
+					</aside>	
 				</section>
 				<section>
 					<h2>Thank you for your attention!</h2>
+					<aside class="notes">
+						Thanks.
+						Offer to ask questions.
+					</aside>
 				</section>
 			</div>
 		</div>
